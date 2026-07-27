@@ -138,21 +138,25 @@ LOGOUT_REDIRECT_URL = 'login'      # para onde vai após logout
 LOGIN_URL = 'login'
 
 # Logs (útil em produção)
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'WARNING',
-            'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs/django.log',
+if DEBUG:
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'file': {
+                'level': 'WARNING',
+                'class': 'logging.FileHandler',
+                'filename': BASE_DIR / 'logs/django.log',
+            },
         },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'WARNING',
-            'propagate': True,
+        'loggers': {
+            'django': {
+                'handlers': ['file'],
+                'level': 'WARNING',
+                'propagate': True,
+            },
         },
-    },
-}
+    }
+else:
+    LOGGING = {}
+
