@@ -1,0 +1,60 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+
+# Virtualenv
+venv/
+ENV/
+env/
+.venv/
+
+# Environments
+.env
+.env.*
+*.env
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+dist/
+build/
+
+# Pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+
+# Pytest
+.pytest_cache/
+
+# Migrations (opcional — só ignore se quiser gerar do zero)
+# */migrations/*
+# !*/migrations/__init__.py
+
+# Node (se usar frontend)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log

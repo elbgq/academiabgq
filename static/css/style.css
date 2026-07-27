@@ -1,0 +1,173 @@
+/* ============================================
+   PALETA DE CORES — TEMA BGQ JIU-JITSU
+   ============================================ */
+
+:root {
+    --bgq-black: #0d0d0d;
+    --bgq-dark: #1a1a1a;
+    --bgq-red: #b30000;
+    --bgq-red-dark: #8c0000;
+    --bgq-gray: #e6e6e6;
+    --bgq-light: #f5f5f5;
+    --bgq-white: #ffffff;
+    --bgq-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   GLOBAL
+   ============================================ */
+
+body {
+    background-color: var(--bgq-light);
+    color: var(--bgq-black);
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: var(--bgq-black);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+    background-color: var(--bgq-black) !important;
+    border-bottom: 3px solid var(--bgq-red-dark);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #ddd !important;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--bgq-white) !important;
+    text-decoration: underline;
+}
+
+/* ============================================
+   FORMULÁRIOS
+   ============================================ */
+
+form label {
+    font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background-color: var(--bgq-white);
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--bgq-red);
+    box-shadow: 0 0 4px rgba(179, 0, 0, 0.4);
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--bgq-red);
+    border-color: var(--bgq-red);
+}
+
+.btn-primary:hover {
+    background-color: var(--bgq-red-dark);
+    border-color: var(--bgq-red-dark);
+}
+
+.btn-secondary {
+    background-color: var(--bgq-dark);
+    border-color: var(--bgq-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bgq-black);
+    border-color: var(--bgq-black);
+}
+
+/* ============================================
+   TABELAS
+   ============================================ */
+/* Forçar cores do cabeçalho da tabela */
+table.table {
+    --bs-table-bg: var(--bgq-black) !important;
+    --bs-table-color: var(--bgq-white) !important;
+}
+
+/* Garantir que o <th> use essas cores */
+table thead th {
+    background-color: var(--bgq-black) !important;
+    color: var(--bgq-white) !important;
+}
+/* Desativa tema claro do Bootstrap para tabelas */
+.table {
+    --bs-table-bg: var(--bgq-black) !important;
+    --bs-table-color: var(--bgq-white) !important;
+    --bs-table-striped-bg: var(--bgq-dark) !important;
+    --bs-table-hover-bg: var(--bgq-dark) !important;
+}
+
+
+/* ============================================
+   CARDS — HOME E LISTAS
+   ============================================ */
+
+.card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 6px var(--bgq-shadow);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background-color: var(--bgq-black);
+    color: #ccc;
+    padding: 20px 0;
+    border-top: 3px solid var(--bgq-red-dark);
+}
+
+footer small {
+    color: #aaa;
+}
+
+/* ============================================
+   LOGIN PAGE — CENTRALIZAÇÃO
+   ============================================ */
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background: var(--bgq-white);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--bgq-shadow);
+}
+
+.login-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}

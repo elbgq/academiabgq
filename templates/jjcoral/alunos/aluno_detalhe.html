@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhes do Aluno{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">{{ aluno.nome }}</h2>
+
+<div class="card p-4">
+
+    <p><strong>Idade:</strong> {{ aluno.idade }}</p>
+    <p><strong>Faixa:</strong> {{ aluno.faixa }}</p>
+
+    {% if aluno.foto %}
+        <div class="mt-3">
+            <img src="{{ aluno.foto.url }}" class="img-fluid rounded" style="max-width: 200px;">
+        </div>
+    {% endif %}
+
+    <hr>
+
+    <a href="{% url 'jjcoral:aluno_editar' aluno.pk %}" class="btn btn-primary">Editar</a>
+    <a href="{% url 'jjcoral:aluno_lista' %}" class="btn btn-secondary">Voltar</a>
+
+</div>
+
+{% endblock %}

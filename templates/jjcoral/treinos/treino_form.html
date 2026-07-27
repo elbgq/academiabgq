@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro de Treino{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Cadastro de Treino</h2>
+
+<div class="card p-4">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{% url 'jjcoral:treino_lista' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Treinos{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Treinos</h2>
+    <a href="{% url 'jjcoral:treino_novo' %}" class="btn btn-primary">Novo Treino</a>
+</div>
+
+<div class="card p-3">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Turma</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for treino in treinos %}
+            <tr>
+                <td>{{ treino.data }}</td>
+                <td>{{ treino.turma.nome }}</td>
+                <td>
+                    <a href="{% url 'jjcoral:treino_detalhe' treino.pk %}" class="btn btn-secondary btn-sm">Detalhes</a>
+                    <a href="{% url 'jjcoral:treino_presenca' treino.pk %}" class="btn btn-primary btn-sm">Presença</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="3">Nenhum treino registrado.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

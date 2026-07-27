@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Turmas{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Turmas</h2>
+    <a href="{% url 'jjcoral:turma_nova' %}" class="btn btn-primary">Nova Turma</a>
+</div>
+
+<div class="card p-3">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Horário</th>
+                <th>Professor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for turma in turmas %}
+            <tr>
+                <td>{{ turma.nome }}</td>
+                <td>{{ turma.horario }}</td>
+                <td>{{ turma.professor.username }}</td>
+                <td>
+                    <a href="{% url 'jjcoral:turma_detalhe' turma.pk %}" class="btn btn-secondary btn-sm">Detalhes</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4">Nenhuma turma cadastrada.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Início{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4 text-center">Painel BGQ Jiu-Jitsu</h2>
+
+<div class="row g-4">
+
+    <!-- Card Alunos -->
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="mb-3">
+                <span class="fs-1">👤</span>
+            </div>
+            <h4>Alunos</h4>
+            <p>Gerencie cadastros, detalhes e evolução dos alunos.</p>
+            <a href="{% url 'jjcoral:aluno_lista' %}" class="btn btn-primary w-100">Acessar</a>
+        </div>
+    </div>
+
+    <!-- Card Turmas -->
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="mb-3">
+                <span class="fs-1">🥋</span>
+            </div>
+            <h4>Turmas</h4>
+            <p>Organize horários, professores e grupos de treino.</p>
+            <a href="{% url 'jjcoral:turma_lista' %}" class="btn btn-primary w-100">Acessar</a>
+        </div>
+    </div>
+
+    <!-- Card Treinos -->
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="mb-3">
+                <span class="fs-1">📅</span>
+            </div>
+            <h4>Treinos</h4>
+            <p>Registre treinos, presença e desempenho dos alunos.</p>
+            <a href="{% url 'jjcoral:treino_lista' %}" class="btn btn-primary w-100">Acessar</a>
+        </div>
+    </div>
+
+    <!-- Card Exames -->
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="mb-3">
+                <span class="fs-1">🏅</span>
+            </div>
+            <h4>Exames</h4>
+            <p>Gerencie exames, inscrições e avaliações de faixa.</p>
+            <a href="{% url 'jjcoral:exame_lista' %}" class="btn btn-primary w-100">Acessar</a>
+        </div>
+    </div>
+    <!-- Card Faixas -->
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="mb-3">
+                <span class="fs-1">🥋</span>
+            </div>
+            <h4>Faixas</h4>
+            <p>Gerencie as faixas de graduação e seus requisitos.</p>
+            <a href="{% url 'jjcoral:faixa_lista' %}" class="btn btn-primary w-100">Acessar</a>
+        </div>
+    </div>
+    <!-- Card Professores -->
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="mb-3">
+                <span class="fs-1">👤</span>
+            </div>
+            <h4>Professores</h4>
+            <p>Gerencie cadastros e detalhes dos professores.</p>
+            <a href="{% url 'jjcoral:professor_lista' %}" class="btn btn-primary w-100">Acessar</a>
+        </div>
+    </div>
+    <!-- Card Coordenadores -->
+    <div class="col-md-3">
+        <div class="card text-center p-3">
+            <div class="mb-3">
+                <span class="fs-1">👤</span>
+            </div>
+            <h4>Coordenadores</h4>
+            <p>Gerencie cadastros e detalhes dos coordenadores.</p>
+            <a href="{% url 'jjcoral:coordenador_lista' %}" class="btn btn-primary w-100">Acessar</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

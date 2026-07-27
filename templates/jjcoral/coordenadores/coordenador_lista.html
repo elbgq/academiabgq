@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Coordenadores</h2>
+
+<a href="{% url 'jjcoral:coordenador_novo' %}" class="btn btn-primary mb-3">Novo Coordenador</a>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>Faixa</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for coordenador in coordenadores %}
+        <tr>
+            <td>
+                {% if coordenador.foto %}
+                    <img src="{{ coordenador.foto.url }}" class="img-thumbnail" style="max-width: 80px;">
+                {% else %}
+                    Sem foto
+                {% endif %}
+            </td>
+            <td>{{ coordenador.nome }}</td>
+            <td>{{ coordenador.faixa }}</td>
+            <td>{{ coordenador.telefone }}</td>
+            <td>
+                <a href="{% url 'jjcoral:coordenador_editar' coordenador.pk %}" class="btn btn-primary btn-sm">Editar</a>
+                <a href="{% url 'jjcoral:coordenador_deletar' coordenador.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

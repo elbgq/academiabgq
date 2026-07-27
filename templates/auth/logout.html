@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p>Tem certeza que deseja sair?</p>
+    <button type="submit" class="btn btn-danger">Sair</button>
+</form>
+<div class="text-center">
+    <h3>Você saiu do sistema.</h3>
+    <a href="{% url 'login' %}" class="btn btn-primary mt-3">Entrar novamente</a>
+</div>
+{% endblock %}

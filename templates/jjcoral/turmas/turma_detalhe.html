@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhes da Turma{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">{{ turma.nome }}</h2>
+
+<div class="card p-4">
+    <p><strong>Horário:</strong> {{ turma.horario }}</p>
+    <p><strong>Professor:</strong> {{ turma.professor.username }}</p>
+
+    <hr>
+    <h4>Alunos da Turma</h4>
+    <ul>
+        {% for aluno in turma.alunos.all %}
+            <li>{{ aluno.nome }}</li>
+        {% empty %}
+            <li>Nenhum aluno cadastrado nesta turma.</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <a href="{% url 'jjcoral:turma_lista' %}" class="btn btn-secondary">Voltar</a>
+</div>
+{% endblock %}

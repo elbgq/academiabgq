@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhes do Treino{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Treino — {{ treino.data }}</h2>
+
+<div class="card p-4">
+    <p><strong>Turma:</strong> {{ treino.turma.nome }}</p>
+
+    <hr>
+
+    <a href="{% url 'jjcoral:treino_presenca' treino.pk %}" class="btn btn-primary">Registrar Presença</a>
+    <a href="{% url 'jjcoral:treino_lista' %}" class="btn btn-secondary">Voltar</a>
+</div>
+{% endblock %}
