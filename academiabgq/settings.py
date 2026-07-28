@@ -133,9 +133,9 @@ if not DEBUG:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = "DENY"
     
-LOGIN_REDIRECT_URL = 'home'        # para onde vai após login
-LOGOUT_REDIRECT_URL = 'login'      # para onde vai após logout
-LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/home/'        # para onde vai após login
+LOGOUT_REDIRECT_URL = '/login/'      # para onde vai após logout
+LOGIN_URL = '/login/'                 # URL de login
 
 # Logs (útil em produção)
 if DEBUG:
