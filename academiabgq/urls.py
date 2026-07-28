@@ -21,15 +21,28 @@ from jjcoral.views import home
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.shortcuts import redirect
+
+def root_redirect(request):
+    return redirect('/login')
+
 
 urlpatterns = [
-    path('', home, name='home'),  # Página inicial do sistema
+    # Redireciona a raiz para /login
+    path('', root_redirect, name='root'),
+
+    # Página inicial real (se quiser manter)
+    path('home/', home, name='home'),
+
+    # Admin
     path('admin/', admin.site.urls),
-    path('', include('jjcoral.urls')),  # Rotas principais do sistema
+
+    # Rotas do app jjcoral
+    path('', include('jjcoral.urls')),
 
     # LOGIN / LOGOUT
     path('login/', auth_views.LoginView.as_view(template_name='auth/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='auth/logout.html'), name='logout')
-
+    path('logout/', auth_views.LogoutView.as_view(template_name='auth/logout.html'), name='logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
